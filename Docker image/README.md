@@ -13,11 +13,6 @@ Optionally you can filter image by repository
 docker images repository-name
 ```
 
-Optionally you can filter image by tag
-```
-docker images tag-name
-```
-
 Optionally you can filter image by repository and tag name
 ```
 docker images repository-name:tag-name
