@@ -62,13 +62,13 @@ WARNING: This is a development server. Do not use it in a production deployment.
 Press CTRL+C to quit
 ```
 \
-You can run container in detached mode using -d flag so it flask app will run in background.
+You can run container in detached mode using -d flag so our container will run in background.
 
 ```
 docker run -d -p 5000:5000 d7afdb7ffdf2
 ```
 
-You can run container by specifying image_name name tag rather than image id.
+You can run container by specifying image_name:tag rather than image id.
 
 ```
 docker run -d -p 5000:5000 flask-app:v1
