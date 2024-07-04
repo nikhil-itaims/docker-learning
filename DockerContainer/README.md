@@ -90,9 +90,9 @@ You can list all (running or stopped) containers using
 docker ps -a
 ```
 
-| CONTAINER ID   | IMAGE           | COMMAND                |  CREATED         |  STATUS             |  PORTS                                     | NAMES        |
-| :------------  | :---------------| :--------------------- |  :-------------- | :------------------ | :----------------------------------------  | :----------- |
-| `b8fc8ed3690b` |  `d7afdb7ffdf2` | `flask --app test ru…` | `2 minutes ago`  | `Up About a minute` |  0.0.0.0:5000->5000/tcp, :::5000->5000/tcp | objective_wu |
+| CONTAINER ID   | IMAGE           | COMMAND                |  CREATED         |  STATUS             |  PORTS                                      | NAMES        |
+| :------------  | :---------------| :--------------------- |  :-------------- | :------------------ | :----------------------------------------   | :-----------  |
+| `b8fc8ed3690b` |  `d7afdb7ffdf2` | `flask --app test ru…` | `2 minutes ago`  | `Up About a minute` | `0.0.0.0:5000->5000/tcp, :::5000->5000/tcp` | `objective_wu` |
 
 
 How to access docker container? (by specifying container id or container name)
