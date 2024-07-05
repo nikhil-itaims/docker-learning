@@ -62,13 +62,13 @@ WARNING: This is a development server. Do not use it in a production deployment.
 Press CTRL+C to quit
 ```
 \
-You can run container in detached mode using -d flag so our container will run in background.
+You can run container in detached mode using -d flag so it flask app will run in background.
 
 ```
 docker run -d -p 5000:5000 d7afdb7ffdf2
 ```
 
-You can run container by specifying image_name:tag rather than image id.
+You can run container by specifying image_name name tag rather than image id.
 
 ```
 docker run -d -p 5000:5000 flask-app:v1
@@ -90,9 +90,9 @@ You can list all (running or stopped) containers using
 docker ps -a
 ```
 
-| CONTAINER ID   | IMAGE           | COMMAND                |  CREATED         |  STATUS             |  PORTS                                      | NAMES        |
-| :------------  | :---------------| :--------------------- |  :-------------- | :------------------ | :----------------------------------------   | :-----------  |
-| `b8fc8ed3690b` |  `d7afdb7ffdf2` | `flask --app test ru…` | `2 minutes ago`  | `Up About a minute` | `0.0.0.0:5000->5000/tcp, :::5000->5000/tcp` | `objective_wu` |
+| CONTAINER ID   | IMAGE           | COMMAND                |  CREATED         |  STATUS             |  PORTS                                     | NAMES        |
+| :------------  | :---------------| :--------------------- |  :-------------- | :------------------ | :----------------------------------------  | :----------- |
+| `b8fc8ed3690b` |  `d7afdb7ffdf2` | `flask --app test ru…` | `2 minutes ago`  | `Up About a minute` |  0.0.0.0:5000->5000/tcp, :::5000->5000/tcp | objective_wu |
 
 
 How to access docker container? (by specifying container id or container name)
@@ -185,4 +185,12 @@ docker run -e DB_HOST=localhost mysql:latest
 Mount a volume from the host and set a memory limit:
 ```
 docker run -v ~/data:/app/data -m 1g myapp:v1.0
+```
+To give specific name to container
+```
+docker run -d -p 5000:5000 --name flask-app-container flask-app:v1
+```
+Rename container
+```
+docker rename flask-app-container flask-app-v1
 ```
