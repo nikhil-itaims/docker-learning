@@ -164,7 +164,8 @@ docker rm objective_wu
 `--user <username>` : To specify the user inside the container to run the process.
 \
 `<image_name>[:<tag>]` : This specifies the name of the Docker image you want to run, optionally including a tag (e.g., ubuntu:latest).
-
+\
+`--rm ` : To automatically delete the container once it stopped
 
 \
 Here are some examples of docker run commands with arguments:
@@ -193,4 +194,8 @@ docker run -d -p 5000:5000 --name flask-app-container flask-app:v1
 Rename container
 ```
 docker rename flask-app-container flask-app-v1
+```
+Remove container automatically once it stopped
+```
+docker run -d -p 5000:5000 --rm --name flask-app-container flask-app:v1
 ```
