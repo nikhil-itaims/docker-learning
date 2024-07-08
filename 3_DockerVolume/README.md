@@ -121,7 +121,7 @@ Creating and Managing Volumes:
 `docker volume rm <volume_name>` : Delete specific volume.
 \
 `docker volume prune` : Removes unused volumes (use with caution).
-\
+
 
 
 ### Bind mounts
