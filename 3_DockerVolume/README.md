@@ -2,21 +2,21 @@
 
 Docker volumes provide a mechanism for persisting data used by Docker containers. They offer several advantages over storing data directly within containers:
 
-**Persistence** : Data volumes survive container restarts, unlike data stored in the container's writable layer.
+**Persistence:** Data volumes survive container restarts, unlike data stored in the container's writable layer.
 \
-**Sharing**: Volumes can be mounted by multiple containers, enabling data sharing between them.
+**Sharing:** Volumes can be mounted by multiple containers, enabling data sharing between them.
 \
-**Flexibility**: Volumes are independent of container lifecycles, allowing you to manage data separately from container images.
+**Flexibility:**: Volumes are independent of container lifecycles, allowing you to manage data separately from container images.
 
 Here's a deeper dive into key concepts and considerations:
 
-**Volume Types** :
+**Volume Types**
 
-**Local Volumes**: These are directories on the Docker host machine that are mounted into containers. They're suitable for development and simple data storage.
+**Local Volumes:** These are directories on the Docker host machine that are mounted into containers. They're suitable for development and simple data storage.
 \
-**Named Volumes** : These are volumes explicitly created and managed by Docker. They're useful for sharing data between containers or persisting data across container restarts.
+**Named Volumes:** These are volumes explicitly created and managed by Docker. They're useful for sharing data between containers or persisting data across container restarts.
 \
-**External Volumes** : These leverage plugins to integrate Docker with external storage providers like cloud storage or network-attached storage (NAS).
+**External Volumes:** These leverage plugins to integrate Docker with external storage providers like cloud storage or network-attached storage (NAS).
 
 #### Run docker container by docker image (Sample flask app example)
 
