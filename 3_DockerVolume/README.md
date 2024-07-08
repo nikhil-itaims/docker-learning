@@ -6,7 +6,7 @@ Docker volumes provide a mechanism for persisting data used by Docker containers
 \
 **Sharing:** Volumes can be mounted by multiple containers, enabling data sharing between them.
 \
-**Flexibility:**: Volumes are independent of container lifecycles, allowing you to manage data separately from container images.
+**Flexibility:** Volumes are independent of container lifecycles, allowing you to manage data separately from container images.
 
 Here's a deeper dive into key concepts and considerations:
 
