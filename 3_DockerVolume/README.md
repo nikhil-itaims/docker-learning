@@ -97,7 +97,7 @@ docker run -d -p 5000:5000 --rm --name fastapi-app fastapi-app-image:v1
 Our fastapi app is running now and we can upload file in it.
 
 
-The problem -
+**The problem** -
 When we container stop container or create new container we lose our files stored which we uplaoded. To overcome this issue we can attach volume to container.
 
 \
