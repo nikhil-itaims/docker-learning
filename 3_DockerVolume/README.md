@@ -10,7 +10,7 @@ Docker volumes provide a mechanism for persisting data used by Docker containers
 
 Here's a deeper dive into key concepts and considerations:
 
-#### Volume Types
+### Volume Types
 
 **Local Volumes:** These are directories on the Docker host machine that are mounted into containers. They're suitable for development and simple data storage.
 \
@@ -18,7 +18,7 @@ Here's a deeper dive into key concepts and considerations:
 \
 **External Volumes:** These leverage plugins to integrate Docker with external storage providers like cloud storage or network-attached storage (NAS).
 
-#### Run docker container by docker image (Sample flask app example)
+### Sample fastapi app example
 
 ```python 
 # main.py
@@ -121,3 +121,44 @@ Creating and Managing Volumes:
 `docker volume rm <volume_name>` : Delete specific volume.
 \
 `docker volume prune` : Removes unused volumes (use with caution).
+\
+
+
+### Bind mounts
+
+In Docker, bind mounts provide a way to share a directory or file from your host machine's filesystem directly into a running container. This allows the container to access and modify the content of the mounted directory or file without rebuilding docker image.
+
+#### Bind Mounts:
+
+**Sharing:** Bind mounts directly link a host directory/file to a container's path.
+\
+**Persistence:** Changes made within the container are reflected on the host machine (and vice versa). Data is not persisted if the container is deleted, but the original files on the host remain.
+\
+**Specificity:** Bind mounts require specifying the exact host directory/file path and the container path for mounting.
+\
+**Portability:** Bind mounts are less portable as they rely on the host's filesystem structure.
+
+#### Use Cases for Bind Mounts:
+
+**Development:** Bind mounts are useful for development purposes when you want to quickly modify code or configuration files on the host machine and see the changes reflected within the container.
+\
+**Data Sharing**: You can use bind mounts to share specific data directories between the host and container, such as log files or configuration data.
+
+
+To run container with bind mount use this shortcut:
+\
+`-v $(pwd):/app` :  If you don't always want to copy and use the full path, you can use these shortcuts
+
+
+Check below example
+```
+docker run -d -p 5000:5000 --rm --name fastapi-app -v uploads:/app/uploads -v $(pwd):/app fastapi-app-image:v1
+```
+
+By running container using this command your fastapi app will not work. Becuase by attaching current working directory to container it can't find venv which is required to run app. For bypassing this error just attach anonymous volume to this container.
+
+```
+docker run -d -p 5000:5000 --rm --name fastapi-app -v uploads:/app/uploads -v $(pwd):/app -v /app/venv fastapi-app-image:v1
+```
+
+**Note:** Only use bind mounts for development purposes it's not recommended to use it in production.
