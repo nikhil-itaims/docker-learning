@@ -10,7 +10,7 @@ Docker volumes provide a mechanism for persisting data used by Docker containers
 
 Here's a deeper dive into key concepts and considerations:
 
-**Volume Types**
+#### Volume Types
 
 **Local Volumes:** These are directories on the Docker host machine that are mounted into containers. They're suitable for development and simple data storage.
 \
