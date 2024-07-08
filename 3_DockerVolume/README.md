@@ -154,8 +154,14 @@ Check below example
 ```
 docker run -d -p 5000:5000 --rm --name fastapi-app -v uploads:/app/uploads -v $(pwd):/app fastapi-app-image:v1
 ```
+\
+Now check the logs
+```
+docker logs fastapi-app
+```
 
-By running container using this command your fastapi app will not work. Becuase by attaching current working directory to container it can't find venv which is required to run app. For bypassing this error just attach anonymous volume to this container.
+if code throws error like **no module named FastAPI** then
+For fixing this error just attach anonymous volume to this container.
 
 ```
 docker run -d -p 5000:5000 --rm --name fastapi-app -v uploads:/app/uploads -v $(pwd):/app -v /app/venv fastapi-app-image:v1
