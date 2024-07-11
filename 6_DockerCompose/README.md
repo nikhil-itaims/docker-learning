@@ -48,7 +48,7 @@ services:
     container_name: node_app
 
     ports:
-      - "3001:3001"
+      - 3001:3001
 
     depends_on:
       - mongodb
@@ -59,7 +59,7 @@ services:
     container_name: react_app
 
     ports:
-      - "3000:3000"
+      - 3000:3000
 
     depends_on:
       - node_app
